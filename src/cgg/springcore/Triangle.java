@@ -1,12 +1,16 @@
 package cgg.springcore;
 
-import java.util.List;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.context.ApplicationContext;
 
-public class Triangle {
-   
-	private Point pointA;
-	private Point pointB;
-	private Point pointC;
+public class Triangle{
+
+	  private Point pointA; 
+	  private Point pointB; 
+	  private Point pointC;
+	
+	private ApplicationContext context;
 	
 	public Point getPointA() {
 		return pointA;
@@ -39,8 +43,14 @@ public class Triangle {
 		System.out.println("Point B = ("+getPointB().getX()+","+getPointB().getY()+")");
 		System.out.println("Point C = ("+getPointC().getX()+","+getPointC().getY()+")");
 	}
-
+	
+	public void myInit() {
+		System.out.println("My Init method is called...");
+	}
+	
+	public void cleanUp() {
+		System.out.println("My Clenaup method is called");
+	}
 	
 
-	
 }
