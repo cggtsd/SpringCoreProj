@@ -4,13 +4,13 @@ import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 
-public class Triangle{
+public class Triangle implements Shape{
 
 	  private Point pointA; 
 	  private Point pointB; 
 	  private Point pointC;
 	
-	private ApplicationContext context;
+	//private ApplicationContext context;
 	
 	public Point getPointA() {
 		return pointA;
@@ -39,18 +39,12 @@ public class Triangle{
 	}
 
 	public void draw() {
+		System.out.println("Drawing Triangle");
 		System.out.println("Point A = ("+getPointA().getX()+","+getPointA().getY()+")");
 		System.out.println("Point B = ("+getPointB().getX()+","+getPointB().getY()+")");
 		System.out.println("Point C = ("+getPointC().getX()+","+getPointC().getY()+")");
 	}
 	
-	public void myInit() {
-		System.out.println("My Init method is called...");
-	}
-	
-	public void cleanUp() {
-		System.out.println("My Clenaup method is called");
-	}
 	
 
 }

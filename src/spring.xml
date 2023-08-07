@@ -5,7 +5,7 @@
     
  <beans default-init-method="myInit" default-destroy-method="cleanUp">
   
- <bean id="triangle" class="cgg.springcore.Triangle" >
+ <bean id="shape" class="cgg.springcore.Triangle" >
   <property name="pointA" ref="pointA"/>
   <property name="pointB" ref="pointB"/> 
   <property name="pointC" ref="pointC"/>
@@ -25,5 +25,8 @@
   <property  name="x" value="20"/>
   <property  name="y" value="0"/>
  </bean>
- <bean class="cgg.springcore.DisplayNameBeanPostProcessor"/>
+ 
+ <bean id="circle" class="cgg.springcore.Circle">
+ <property name="center" ref="pointA"/>
+ </bean>
  </beans>   
